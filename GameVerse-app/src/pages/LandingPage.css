@@ -1,0 +1,39 @@
+.landing-wrapper {
+  min-height: 100vh;
+  background: #f3f1ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.landing-image {
+  max-width: 500px;
+  width: 70%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Centered start button */
+.start-btn {
+  background: linear-gradient(135deg, #6d82ff, #9a6bff);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  padding: 12px 45px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(100, 100, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(100, 100, 255, 0.9);
+}

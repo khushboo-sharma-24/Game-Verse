@@ -1,0 +1,158 @@
+/* Home Page: center header + button */
+.quick-draw-home {
+  min-height: 100vh;
+  background: #61d18f;
+  font-family: "Comic Sans MS", "Arial Rounded MT Bold", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.quick-draw-home h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.clear-btn {
+  margin-top: 0.5em; /* one line gap */
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-size: 32px; /* same size as header visually */
+  cursor: pointer;
+}
+
+/* Guess Game Page: stack vertically */
+.quick-draw-game {
+  min-height: 100vh;
+  background: #61d18f;
+  font-family: "Comic Sans MS", "Arial Rounded MT Bold", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.quick-draw-game .quick-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quick-draw-game .quick-header h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.quick-draw-game .quick-header p {
+  font-size: 18px;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+.quick-draw-game .timer-badge {
+  background: #fff;
+  color: #333;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.quick-draw-game .word-box {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.quick-draw-game .draw-area {
+  background: #fff;
+  padding: 10px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  margin-bottom: 12px;
+  width: 85%;
+  max-width: 380px;
+}
+
+.quick-draw-game .draw-canvas {
+  background: #fff;
+  border-radius: 12px;
+  cursor: crosshair;
+  width: 100%;
+  height: 280px;
+}
+
+@media (max-width: 520px) {
+  .quick-draw-game .draw-canvas { height: 250px; }
+}
+
+@media (min-width: 901px) {
+  .quick-draw-game .draw-canvas { height: 350px; }
+}
+.quick-draw-game .clear-btn {
+  margin-top: 12px; /* space between canvas and button */
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: center; /* center horizontally below canvas */
+}
+
+.guess-panel {
+  background: #fff;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-top: 12px;
+  width: 85%;
+  max-width: 380px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guess-panel h3 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.guess-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guess-panel li {
+  font-size: 18px;
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.guess-panel li strong {
+  color: #61d18f;
+  font-weight: bold;
+}

@@ -1,0 +1,260 @@
+/* global reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* base body styles */
+html, body, #root {
+   height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0f0f10;
+  color: #fff;
+}
+
+/* code font */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* =========================
+   GALLERY page
+   ========================= */
+.gallery-page { padding: 20px; min-height: 100vh; background-color: #7fa4ff; position: relative; }
+.gallery-title { text-align: center; margin-bottom: 14px; font-size: 24px; }
+.gallery-grid {
+  display: grid;
+  gap: 12px;
+  max-width: 980px;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+}
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #171717;
+  background: white;
+  padding: 8px;
+  width: 100%;
+}
+.gallery-item img {
+ max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.22s;
+  background-color: white;
+}
+.gallery-item:hover img { transform: scale(1.03); }
+
+/* =========================
+   DIFFICULTY page
+   ========================= */
+.difficulty-page {
+  background-color: #7fa4ff;
+  padding: 26px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  position: relative;
+}
+.difficulty-card { width: 360px; text-align:center; }
+.difficulty-preview {
+  width: 260px;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  border: 1px solid #222;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+.difficulty-buttons .btn {
+  display:block;
+  width: 100%;
+  padding: 12px 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight:600;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+.btn.easy { background: #3bb54a; }
+.btn.medium { background: #ff9b2e; }
+.btn.standard { background: #ef4b4b; }
+.btn.hard { background: #8a1f1f; }
+
+/* =========================
+   PLAY page
+   ========================= */
+.play-page {
+  padding: 18px;
+  background-color: #7fa4ff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+  position: relative;
+}
+.play-header {
+  width:100%;
+  max-width:980px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+  padding: 0 12px;
+}
+.time-box, .moves-box {
+  text-align:center;
+  background: #0e0e0f;
+  border-radius:8px;
+  padding: 8px 12px;
+  border: 1px solid #222;
+  min-width: 84px;
+}
+.time-box .label, .moves-box .label { font-size:12px; color:#bbb; }
+.time-box .value, .moves-box .value {
+  font-size:20px;
+  font-weight:700;
+  margin-top:4px;
+  color: #fff;
+}
+.preview-box img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #222;
+}
+
+/* puzzle board */
+.puzzle-board {
+  display: grid;
+  gap: 4px;
+  background:#0c0c0c;
+  padding:6px;
+  border-radius:8px;
+  width: 90%;              /* responsive width */
+  max-width: 420px;         /* don’t get too big on desktop */
+  aspect-ratio: 1 / 1;
+}
+.tile {
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #151515;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition: transform .12s, box-shadow .12s;
+}
+.tile:hover { transform: scale(1.02); box-shadow: 0 6px 18px rgba(0,0,0,0.5); }
+.tile.selected { outline: 3px solid #ffd54f; transform: scale(1.03); }
+
+/* responsive adjustments */
+@media (max-width: 520px) {
+  .gallery-item img { height: 100px; }
+  .difficulty-card { width: 92%; }
+  .puzzle-board { width: 92vw !important; height: 92vw !important; }
+}
+
+/* =========================
+   Additional utility styles
+   ========================= */
+
+/* center helper */
+.centered { display:flex; align-items:center; justify-content:center; }
+
+/* buttons */
+.btn-small {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* small text helpers */
+.kicker { font-size:12px; color:#bdbdbd; }
+.h1 { font-size:22px; margin-bottom:10px; text-align:center; }
+
+/* safe max width container */
+.container-max {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px;
+}
+/* Tablets / medium screens */
+@media (min-width: 521px) and (max-width: 900px) {
+  .puzzle-board {
+    max-width: 500px;
+    width: 90%;
+  }
+}
+
+/* Large screens / laptops */
+@media (min-width: 901px) {
+  .puzzle-board {
+    max-width: 600px;
+    width: 80%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 520px) {
+  .puzzle-board {
+    width: 95vw;
+    height: 95vw;
+    gap: 2px; 
+  }
+}
+@media (max-width: 900px) { 
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap:8px; }
+}
+@media (max-width:520px) {
+  .gallery-grid { grid-template-columns: repeat(3,1fr); }
+}
+
+/* Back button styling for all pages */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(33, 230, 193, 0.9);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.back-btn:hover {
+  background: rgba(33, 230, 193, 1);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(33, 230, 193, 0.4);
+}
+
+.back-btn:active {
+  transform: scale(0.98);
+}
+@media (min-width:901px){
+  .gallery-grid { grid-template-columns: repeat(4,1fr); }
+}
+
+
