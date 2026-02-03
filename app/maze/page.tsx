@@ -142,12 +142,15 @@ export default function MazeGame() {
             const isCoin = coins.some((c) => c.x === x && c.y === y)
             const isExit = x === SIZE - 2 && y === SIZE - 2
 
+            let content = null
+            if (isPlayer) content = "🧍"
+            else if (isEnemy) content = "👾"
+            else if (isCoin) content = "🪙"
+            else if (isExit) content = "🏁"
+
             return (
               <div key={`${x}-${y}`} className={`cell ${cell ? "wall" : "path"}`}>
-                {isPlayer && <span role="img" aria-label="player">{"🧍"}</span>}
-                {isEnemy && <span role="img" aria-label="enemy">{"👾"}</span>}
-                {isCoin && <span role="img" aria-label="coin">{"🪙"}</span>}
-                {isExit && <span role="img" aria-label="exit">{"🏁"}</span>}
+                {content}
               </div>
             )
           })
