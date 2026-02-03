@@ -93,11 +93,11 @@ export default function PuzzleGame() {
           <Image
             src={image}
             alt="preview"
-            width={110}
-            height={110}
+            width={60}
+            height={60}
             style={{
               objectFit: "contain",
-              borderRadius: "8px",
+              borderRadius: "6px",
             }}
           />
         </div>
@@ -112,8 +112,6 @@ export default function PuzzleGame() {
         className="puzzle-board"
         style={{
           gridTemplateColumns: `repeat(${gridSize}, 1fr)`,
-          width: `${Math.min(420, gridSize * 90)}px`,
-          height: `${Math.min(420, gridSize * 90)}px`,
         }}
       >
         {tileIndices.map((tileVal, i) => {

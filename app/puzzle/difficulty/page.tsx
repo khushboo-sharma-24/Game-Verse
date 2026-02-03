@@ -29,8 +29,8 @@ export default function SelectDifficulty() {
         <Image
           src={image}
           alt="selected"
-          width={260}
-          height={260}
+          width={200}
+          height={200}
           className="difficulty-preview"
         />
         <div className="difficulty-buttons">
