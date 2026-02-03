@@ -470,9 +470,9 @@ body {
 
 .maze-grid {
   display: grid;
-  grid-template-columns: repeat(15, min(4.5vw, 30px));
-  gap: min(0.4vw, 3px);
-  padding: min(1.5vw, 10px);
+  grid-template-columns: repeat(15, clamp(20px, 4vw, 32px));
+  gap: 2px;
+  padding: 8px;
   background: #020617;
   border-radius: 15px;
   box-shadow: 0 0 40px #38bdf8;
@@ -480,13 +480,15 @@ body {
 }
 
 .cell {
-  width: min(4.5vw, 30px);
-  height: min(4.5vw, 30px);
-  border-radius: 8px;
+  width: clamp(20px, 4vw, 32px);
+  height: clamp(20px, 4vw, 32px);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: min(3vw, 16px);
+  font-size: clamp(12px, 2.5vw, 20px);
+  overflow: hidden;
+  line-height: 1;
 }
 
 .wall {
@@ -863,16 +865,16 @@ body {
   }
   
   .maze-grid {
-    grid-template-columns: repeat(15, min(5.5vw, 25px));
-    gap: min(0.3vw, 2px);
-    padding: min(1vw, 8px);
+    grid-template-columns: repeat(15, clamp(16px, 5.5vw, 22px));
+    gap: 1px;
+    padding: 6px;
   }
   
   .cell {
-    width: min(5.5vw, 25px);
-    height: min(5.5vw, 25px);
-    font-size: min(3.5vw, 14px);
-    border-radius: 5px;
+    width: clamp(16px, 5.5vw, 22px);
+    height: clamp(16px, 5.5vw, 22px);
+    font-size: clamp(10px, 3.5vw, 14px);
+    border-radius: 4px;
   }
 }
 
